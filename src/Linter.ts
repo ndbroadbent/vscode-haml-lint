@@ -67,7 +67,7 @@ export default class Linter {
     }
 
     const config = workspace.getConfiguration("hamlLint");
-    const args = `--reporter json ${document.uri.fsPath}`;
+    const args = `-A --reporter json ${document.uri.fsPath}`;
     const command = config.useBundler
       ? `bundle exec haml-lint ${args}`
       : `${config.executablePath} ${args}`;
